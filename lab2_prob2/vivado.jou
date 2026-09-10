@@ -40,3 +40,10 @@ update_compile_order -fileset sim_1
 update_compile_order -fileset sim_1
 launch_runs synth_1 -jobs 12
 wait_on_run synth_1
+launch_simulation
+source testbench.tcl
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_sim
+launch_simulation
+launch_simulation
+source testbench.tcl
